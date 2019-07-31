@@ -36,6 +36,138 @@ h4 {
     border: 1px #363537 solid;
     float: left;
 }
+.numeric-grid {
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-auto-rows: 50px;
+    background: #FBF3F1;
+    grid-gap:1px;
+    
+}
+.numeric-grid > div {
+    background: #FBF3F1;
+    padding: 1px;
+}
+.no1 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no2 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no3 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no4 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no5 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no6 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no7 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no8 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.no9 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;    
+    border: 1px solid #eeeeee;
+}
+.no0 button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.dot button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #E4572E;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+.delete-sign button{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #363537;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
 #catalog-container {
     width: 479px;
     height: 255px;
