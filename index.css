@@ -33,7 +33,7 @@ h4 {
 #keyboard {
     width: 260px;
     height: 255px;
-    border: 1px #363537 solid;
+    border: 0.5px #eee solid;
     float: left;
     background-color: #FBF3F1;
     margin-top: 10px;
@@ -196,12 +196,14 @@ h4 {
     border: 1px #363537 solid;
     float: right;
     padding-top: 10px;
+    border: 0.5px #eee solid;
 }
 #catalog {
     width: 440px;
     height: 190px;
     float: left;
-    /*border: 1px solid #363537;*/
+    border: 0.5px solid #eee;
+    margin-bottom: 10px;
 }
 .category-grid {
     display: grid;
@@ -228,33 +230,51 @@ h4 {
     height: 190px;
     border: none;
     float: right;
+    padding-right: 10px;
 }
 .btn-up {
     width:60px; 
     height: 60px; 
-    border-radius: 4px;
+    border-radius: 8px;
     background-image:url(buttonup.png); 
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #FBF3F1;
+    border-color: 1px solid #eee;
 }
 .btn-down {
     width:60px; 
     height: 60px; 
-    border-radius: 4px;
+    border-radius: 8px;
     background-image:url(buttondown.png); 
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #FBF3F1;
+    border-color: 1px solid #eee;
     margin-top: 70px;
 }
 #search {
     width: 440px;
-    height: 32px;
-    border: 1px #363537 solid;
+    height: 40px;
+    border: 0.5px #fff solid;
     clear: both;
+}
+.search-input {
+    width: 440px;
+    height: 40px;
+    background-color: #fff; 
+    background-image: url(iconsearch.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    text-align:left; 
+    align-items: center
+    vertical-align:middle;
+    margin: 0 auto;
 }
 #order-items {
     width: 794px;
