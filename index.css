@@ -221,7 +221,7 @@ h4 {
     font-size: 14px;
     color: #000;
     text-align: center;    
-    border-color: 1px solid #E1E1E1;
+    border-color: 1px solid #eee;
 }
 #catalog-navigation {
     width: 60px;
@@ -232,20 +232,22 @@ h4 {
 .btn-up {
     width:60px; 
     height: 60px; 
+    border-radius: 4px;
     background-image:url(buttonup.png); 
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #ffffff;
+    border-color: 1px solid #eee;
 }
 .btn-down {
     width:60px; 
     height: 60px; 
+    border-radius: 4px;
     background-image:url(buttondown.png); 
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #ffffff;
+    border-color: 1px solid #eee;
     margin-top: 70px;
 }
 #search {
