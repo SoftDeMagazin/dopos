@@ -216,16 +216,17 @@ h4 {
 .category-grid button {
     width:108px;
     height:94px;
+    border-radius: 4px;
+    background-color: #E1E1E1;
+    font-size: 14px;
     color: #000;
     text-align: center;    
-    font-size: 14px;
-    background-color: #E1E1E1;
-    border-color: #E1E1E1;
+    border-color: 1px solid #E1E1E1;
 }
 #catalog-navigation {
     width: 60px;
     height: 190px;
-    border: 1px #363537 solid;
+    border: 0.5px #363537 solid;
     float: right;
 }
 .btn-up {
@@ -234,7 +235,8 @@ h4 {
     background-image:url(buttonup.png); 
     background-repeat: no-repeat; 
     background-position: center;
-    border: none;
+    background-color: #ffffff;
+    border-color: 1px solid #ffffff;
 }
 .btn-down {
     width:60px; 
@@ -242,7 +244,8 @@ h4 {
     background-image:url(buttondown.png); 
     background-repeat: no-repeat; 
     background-position: center;
-    border: none;
+    background-color: #ffffff;
+    border-color: 1px solid #ffffff;
     margin-top: 70px;
 }
 #search {
