@@ -226,7 +226,7 @@ h4 {
 #catalog-navigation {
     width: 60px;
     height: 190px;
-    border: 0.5px #363537 solid;
+    border: none;
     float: right;
 }
 .btn-up {
@@ -237,7 +237,7 @@ h4 {
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #eee;
+    border-color: 1px solid #FBF3F1;
 }
 .btn-down {
     width:60px; 
@@ -247,7 +247,7 @@ h4 {
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #eee;
+    border-color: 1px solid #FBF3F1;
     margin-top: 70px;
 }
 #search {
