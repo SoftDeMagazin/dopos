@@ -30,13 +30,22 @@ h4 {
     padding-top: 35px;
     padding-bottom: 35px;
 }
+p {
+    color: #000;
+    font: Arial, Helvetica, sans-serif;
+    size: 14px;
+    text-align: left;
+    font-weight: none;
+}
 #keyboard {
-    width: 260px;
-    height: 255px;
+    width: 230px;
+    height: 242px;
+    border-radius: 4px;
     border: 0.5px #eee solid;
     float: left;
-    background-color: #FBF3F1;
+    background-color: #EEE;
     margin-top: 10px;
+    margin-left: 10px;
 }
 #keyboard-result {
     width: 200px;
@@ -60,17 +69,17 @@ h4 {
     display: grid;
     grid-template-columns: repeat(4,50px);
     grid-auto-rows: 50px;
-    background: #FBF3F1;
+    background: #EEE;
     grid-gap:1px;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
 }
 .numeric-grid > div {
-    background: #FBF3F1;
+    background: #eee;
     padding: 1px;   
 }
-.no1 button{
+.numeric-grid button{
     width: 48px;
     height: 48px;
     border-radius: 8px;
@@ -78,107 +87,7 @@ h4 {
     font-size: 16px;
     color: #fff;
     text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no2 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no3 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no4 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no5 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no6 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no7 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no8 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.no9 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;    
-    border: 1px solid #eeeeee;
-}
-.no0 button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
-}
-.dot button{
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #E4572E;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #eeeeee;
+    border: 1px solid #ffffff;
 }
 .delete-sign button{
     width: 48px;
@@ -188,35 +97,35 @@ h4 {
     font-size: 16px;
     color: #fff;
     text-align: center;
-    border: 1px solid #eeeeee;
+    border: 1px solid #fff;
 }
 #catalog-container {
-    width: 520px;
+    width: 540px;
     height: 255px;
-    border: 1px #363537 solid;
+    border: 0.5px #fff solid;
     float: right;
     padding-top: 10px;
-    border: 0.5px #eee solid;
+    border: 0.5px #fff solid;
 }
 #catalog {
-    width: 440px;
+    width: 460px;
     height: 190px;
     float: left;
-    border: 0.5px solid #eee;
+    border: 0.5px solid #fff;
     margin-bottom: 10px;
 }
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(4, 108px);
+    grid-template-columns: repeat(4, 115px);
     grid-auto-rows: minmax(94px, auto);
     grid-gap: 2px;
-    grid-column-gap: 2px;
+    grid-column-gap: 1px;
     background-color: #ffffff;
     align-items: center;
     justify-content: center;
 }
 .category-grid button {
-    width:108px;
+    width:112px;
     height:94px;
     border-radius: 4px;
     background-color: #E1E1E1;
@@ -230,37 +139,56 @@ h4 {
     height: 190px;
     border: none;
     float: right;
-    padding-right: 10px;
+    padding-left: 19px;
+}
+.navigation-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 50px);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 2px;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
 }
 .btn-up {
-    width:60px; 
-    height: 60px; 
+    width: 50px; 
+    height: 50px; 
     border-radius: 8px;
-    background-image:url(buttonup.png); 
+    background-image:url(arrowup30x27.png); 
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #eee;
+    border-color: 0.5px solid #eee;
+}
+.btn-back {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 8px;
+    background-image:url(backbtn30x27.png); 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-color: #ffffff;
+    border-color: 0.5px solid #eee;
+    margin: 17px 0px 17px 0px;
 }
 .btn-down {
-    width:60px; 
-    height: 60px; 
+    width:50px; 
+    height: 50px; 
     border-radius: 8px;
-    background-image:url(buttondown.png); 
+    background-image:url(arrowdown30x27.png); 
     background-repeat: no-repeat; 
     background-position: center;
     background-color: #ffffff;
-    border-color: 1px solid #eee;
-    margin-top: 70px;
+    border-color: 0.5px solid #eee;
 }
 #search {
-    width: 440px;
+    width: 460px;
     height: 40px;
     border: 0.5px #fff solid;
     clear: both;
 }
 .search-input {
-    width: 440px;
+    width: 460px;
     height: 40px;
     background-color: #fff; 
     background-image: url(iconsearch.png);
@@ -280,8 +208,22 @@ h4 {
 #order-items {
     width: 794px;
     height: 300px;
-    border: 1px #363537 solid;
+    border: 0.5px #fff solid;
+    background-color: #ffffff;
     clear: both;
+}
+.order-header-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 170px);
+    grid-gap: 2px;
+    background-color: #eee;
+    padding-left: 18px;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+    border: 0.5px #E1E1E1 solid;
+    border-radius: 2px;
+    font-size: 14px;
 }
 #payment-container {
     width: 794px;
