@@ -31,8 +31,7 @@ h4 {
     padding-bottom: 35px;
 }
 p {
-    color: #000;
-    font: Arial, Helvetica, sans-serif;
+    font: Open sans-serif;
     size: 14px;
     text-align: left;
     font-weight: none;
@@ -133,6 +132,7 @@ p {
     color: #000;
     text-align: center;    
     border-color: 1px solid #eee;
+    font-weight: 600;
 }
 #catalog-navigation {
     width: 60px;
@@ -214,21 +214,49 @@ p {
 }
 .order-header-grid {
     display: grid;
-    grid-template-columns: repeat(4, 170px);
-    grid-gap: 2px;
-    background-color: #eee;
-    padding-left: 18px;
-    justify-content: space-around;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-auto-rows: minmax(40px, auto);
+    grid-gap: 2px 2px;
+    background-color: #E1E1E1;
+    padding-left: 10px;
     align-items: center;
-    vertical-align: middle;
-    border: 0.5px #E1E1E1 solid;
+    justify-content: left;
+    border: 1px #EEE solid;
     border-radius: 2px;
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.order-contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));   
+    grid-auto-rows: minmax(40px, auto);
+    grid-gap: 1px 1px;
+    background-color: #fff;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: left;
+    border: 1px #eee solid;
+    border-radius: 2px;
+    font-size: 16px;
+    margin-left: 10px;
+    color: black;
+    font-weight: bold;
+}
+.item {
+    width: 100px;
+    height: minmax(40px,auto);
+    background-color: #fff;
+    vertical-align: middle;
+    border-radius: 2px;
+    font-size: 16px;
+    color: black;
+    justify-content: left;
 }
 #payment-container {
     width: 794px;
-    height: 150px;
-    border: 1px #EEE solid;
+    height: 200px;
+    border: 0.5px #000 solid;
     clear: both;
 }
 #receipt {
@@ -237,10 +265,40 @@ p {
     border: 1px #fff solid;
     float:left;
 }
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));   
+    grid-auto-rows: minmax(40px, auto);
+    grid-gap: 1px 1px;
+    background-color: #fff;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: left;
+    border: 1px #eee solid;
+    border-radius: 2px;
+    font-size: 16px;
+    margin-left: 10px;
+    color: black;
+    font-weight: bold;
+}
 #order-info {
     width: 510px;
     height: 70px;
     border: 1px #EEE solid;
+}
+.receipt-header {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+    grid-auto-rows: minmax(30px, auto);
+    grid-gap: 2px 2px;
+    background-color: #363537;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #fff;
+    margin-left: 10px;
 }
 #payment-methods-grid {
     width: 510px;
@@ -251,6 +309,7 @@ p {
     grid-auto-rows: 40px;
     grid-gap: 2px;
     margin-left: 10px;
+    float: right;
 }
 .numerar {
     width: 130px;
@@ -263,6 +322,7 @@ p {
     justify-content: center;
     border: 1px #eee solid;
     color: #fff;
+    font-weight: 600;
 }
 .card {
     width: 140px;
@@ -275,34 +335,18 @@ p {
     justify-content: center;
     border: 1px #eee solid;
     color: #fff;
+    font-weight: 600;
 }
-.protocol {
+.plata-avansata {
     width: 140px;
     height: 65px;
     border-radius: 8px;
     text-align: center;
     font-size: 14px;
-    background-color: grey;
+    background-color: #E4572E;
     align-items: right;
     justify-content: center;
     border: 1px #eee solid;
     color: #fff;
-}
-#advanced-payment {
-    width: 200px;
-    height: 140px;
-    border: 1px #fff solid;
-    float: right;
-}
-#advanced-payment button {
-    width: 200px;
-    height: 140px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 20px;
-    background-color: #329F5B;
-    align-items: right;
-    justify-content: center;
-    border: 1px #eee solid;
-    color: #fff;
+    font-weight: 600;
 }
