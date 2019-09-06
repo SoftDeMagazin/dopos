@@ -8,36 +8,87 @@ body {
     margin: 0 auto;
 }
 #menu-container {
-    width: 230px;
-    height: 768px;
+    width: 60px;
+    height: 760px;
     background-color: #363537;
     float: left;
 }
-#menu {
-    color: #fff;
+.home {
+    width: 60px; 
+    height: 60px; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-color: #363537;
+    border-color: #363537; 
+    color: white;
+    background-image:url(menusign.png); 
 }
+#menu {
+    display: grid;
+    grid-template-rows: minmax(60px, 1fr);
+    grid-gap: 2px 2px;
+    align-items: left;
+    justify-content: center;
+    color: #fff;
+    float: right;
+}
+#menu button {
+    width: 60px; 
+    height: 60px; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-color: #363537;
+    border-color: #363537;
+}
+.marcaj {
+    background-image:url(marcaj.png); 
+}
+.vanzari {
+    background-image: url(bonuri.png);
+}
+.bonuri {
+    background-image: url(raport.png);
+}
+.rapoarte {
+    background-image: url(sales.png);
+}
+.inchidere-zi{
+    background-image: url(inchiderezi.png);
+}
+.configurari-produse {
+    background-image: url(configurariproduse.png);
+}
+.suport {
+    background-image: url(support.png);
+}
+.setari {
+    background-image: url(settings.png);
+}
+.logout {
+    background-image: url(logout.png);
+}
+
 #operations-container {
-    width: 794px;
+    width: 964px;
     height: 768px;
     float: right;
 }
 h4 {
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     size: 12px;
     text-align: center;
     font-weight: none;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 p {
-    font: Open sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     size: 14px;
     text-align: left;
-    font-weight: none;
 }
 #keyboard {
-    width: 230px;
+    width: 270px;
     height: 242px;
     border-radius: 4px;
     border: 0.5px #eee solid;
@@ -48,10 +99,10 @@ p {
 }
 #keyboard-result {
     width: 200px;
-    margin:10px auto;
+    margin-left: 30px;
 }
 .numeric-input {
-    width: 200px;
+    width: 208px;
     height: 40px;
     background-color: #ffffff; 
     font-size: 16px;
@@ -66,7 +117,7 @@ p {
 }
 .numeric-grid {
     display: grid;
-    grid-template-columns: repeat(4,50px);
+    grid-template-columns: repeat(4,52px);
     grid-auto-rows: 50px;
     background: #EEE;
     grid-gap:1px;
@@ -88,6 +139,10 @@ p {
     text-align: center;
     border: 1px solid #ffffff;
 }
+.numeric-grid button:hover {
+    background-color: green;
+    transition-duration: 0.4s;
+}
 .delete-sign button{
     width: 48px;
     height: 48px;
@@ -99,29 +154,31 @@ p {
     border: 1px solid #fff;
 }
 #catalog-container {
-    width: 540px;
-    height: 255px;
+    width: 650px;
+    height: 250px;
     border: 0.5px #fff solid;
     float: right;
     padding-top: 10px;
     border: 0.5px #fff solid;
 }
 #catalog {
-    width: 460px;
+    width: 550px;
     height: 190px;
     float: left;
     border: 0.5px solid #fff;
+    margin-left: 10px;
     margin-bottom: 10px;
 }
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(4, 115px);
+    grid-template-columns: repeat(5, 115px);
     grid-auto-rows: minmax(94px, auto);
     grid-gap: 2px;
     grid-column-gap: 1px;
     background-color: #ffffff;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .category-grid button {
     width:112px;
@@ -144,7 +201,7 @@ p {
 .navigation-grid {
     display: grid;
     grid-template-columns: repeat(1, 50px);
-    grid-auto-rows: minmax(50px, auto);
+    grid-auto-rows: minmax(40px, auto);
     grid-gap: 2px;
     background-color: #ffffff;
     align-items: center;
@@ -182,13 +239,13 @@ p {
     border-color: 0.5px solid #eee;
 }
 #search {
-    width: 460px;
-    height: 40px;
+    width: 655px;
+    height: 50px;
     border: 0.5px #fff solid;
-    clear: both;
+    margin: auto;
 }
 .search-input {
-    width: 460px;
+    width: 572px;
     height: 40px;
     background-color: #fff; 
     background-image: url(iconsearch.png);
@@ -206,18 +263,17 @@ p {
     margin: 0 auto;
 }
 #order-items {
-    width: 794px;
-    height: 300px;
-    border: 0.5px #fff solid;
-    background-color: #ffffff;
+    width: 946px;
+    height: 320px;
+    border: 10px #fff solid;
     clear: both;
 }
 .order-header-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-auto-rows: minmax(40px, auto);
-    grid-gap: 2px 2px;
-    background-color: #E1E1E1;
+    grid-gap: 1px 1px;
+    background-color: #363537;
     padding-left: 10px;
     align-items: center;
     justify-content: left;
@@ -225,128 +281,102 @@ p {
     border-radius: 2px;
     font-size: 16px;
     margin-top: 10px;
-    margin-left: 10px;
+    font-weight: bold;
+    color: #fff;
 }
 .order-contents {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));   
-    grid-auto-rows: minmax(40px, auto);
-    grid-gap: 1px 1px;
-    background-color: #fff;
-    padding-left: 10px;
-    align-items: center;
-    justify-content: left;
-    border: 1px #eee solid;
-    border-radius: 2px;
-    font-size: 16px;
-    margin-left: 10px;
-    color: black;
-    font-weight: bold;
-}
-.item {
-    width: 100px;
-    height: minmax(40px,auto);
-    background-color: #fff;
-    vertical-align: middle;
-    border-radius: 2px;
-    font-size: 16px;
-    color: black;
-    justify-content: left;
-}
-#payment-container {
-    width: 794px;
-    height: 200px;
-    border: 0.5px #000 solid;
-    clear: both;
-}
-#receipt {
-    width: 510px;
-    height: 124px;
-    border: 1px #fff solid;
-    float:left;
-}
-.payment-methods-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));   
-    grid-auto-rows: minmax(40px, auto);
-    grid-gap: 1px 1px;
-    background-color: #fff;
-    padding-left: 10px;
-    align-items: center;
-    justify-content: left;
-    border: 1px #eee solid;
-    border-radius: 2px;
-    font-size: 16px;
-    margin-left: 10px;
-    color: black;
-    font-weight: bold;
-}
-#order-info {
-    width: 510px;
-    height: 70px;
-    border: 1px #EEE solid;
-}
-.receipt-header {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
-    grid-auto-rows: minmax(30px, auto);
-    grid-gap: 2px 2px;
-    background-color: #363537;
-    padding-left: 10px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-    font-size: 16px;
-    color: #fff;
-    margin-left: 10px;
-}
-#payment-methods-grid {
-    width: 510px;
-    height: 70px;
-    border: 1px #fff solid;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-auto-rows: 40px;
+    grid-gap: 5px 5px;
+    background-color: #EEE;
+    padding-left: 20px;
+    align-items: center;
+    border-radius: 2px;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+.payment-container {
+    height: 180px;
+    display: grid;
     grid-gap: 2px;
+    grid-template-columns: repeat(2, 474px);
+    grid-template-rows: 180px;
     margin-left: 10px;
-    float: right;
 }
-.numerar {
-    width: 130px;
-    height: 65px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 14px;
-    background-color: #E4572E;
-    align-items: right;
+.receipt {
+    margin-top: 40px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 158px);
+    grid-auto-rows: 50px;
+    color: white;
+    font-weight: bold;
+    align-items: center;
     justify-content: center;
-    border: 1px #eee solid;
-    color: #fff;
-    font-weight: 600;
+    background-color: #363537;
 }
-.card {
+.receipt > div:nth-child(1) {
+    padding-left: 10px;
+}
+.receipt > div:nth-child(2) {
+    padding-left: 10px;
+}
+.receipt > div:nth-child(3) {
+    padding-left: 10px;
+}
+.receipt > div:nth-child(4) {
+    background-color: #eee;	
+    color: #000;
+    padding-left: 10px;
+  }
+  .receipt > div:nth-child(5) {
+    background-color: #eee;	
+    color: #000;
+    padding-left: 10px;
+
+  }
+  .receipt > div:nth-child(6) {
+    background-color: #eeef;	
+    color: #000;
+    padding-left: 10px;
+}
+
+.pay {
     width: 140px;
-    height: 65px;
+    height: 100px;
     border-radius: 8px;
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #E4572E;
-    align-items: right;
-    justify-content: center;
-    border: 1px #eee solid;
     color: #fff;
-    font-weight: 600;
+    font-weight: bold; 
+    margin-left: 10px;
+    margin-top: 40px;
+    justify-content: center;
+    text-align: center;
 }
-.plata-avansata {
+.pay:hover {
+    background-color:green;
+    transition-duration: 0.6s;
+
+}
+.payment-option {
     width: 140px;
-    height: 65px;
+    height: 100px;
     border-radius: 8px;
     text-align: center;
-    font-size: 14px;
-    background-color: #E4572E;
-    align-items: right;
+    font-size: 16px;
+    background-color:goldenrod;
+    color: white;
+    font-weight: bold; 
+    margin-left: 10px;
+    margin-top: 40px;
     justify-content: center;
-    border: 1px #eee solid;
-    color: #fff;
-    font-weight: 600;
+    text-align: center;
+}
+.payment-option:hover {
+    background-color: green;
+    transition-duration: 0.6s;
 }

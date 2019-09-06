@@ -5,18 +5,18 @@
     <body>
         <div id="content">
             <div id="menu-container">
-                <h4>SOFT DE MAGAZIN</h4>
-                <ul id="menu">
-                    <li><a href="#">Marcaj</a></li>
-                    <li><a href="#">Evidenta vanzari</a></li>
-                    <li><a href="#">Evidenta bonuri</a></li>
-                    <li><a href="#">Rapoarte</a></li>
-                    <li><a href="#">Inchidere zi</a></li>
-                    <li><a href="#">Configurari produse</a></li>
-                    <li><a href="#">Configurari</a></li>
-                    <li><a href="#">Asistenta si suport</a></li>
-                    <li><a href="#">Deconectare</a></li>
-                </ul>
+                <button class="home"></button>
+                <ul  id="menu">
+                    <button class="marcaj"></button>
+                    <button class="vanzari"></button>
+                    <button class="bonuri"></button>
+                    <button class="rapoarte"></button>
+                    <button class="inchidere-zi"></button>
+                    <button class="configurari-produse"></button>
+                    <button class="setari"></button>
+                    <button class="suport"></button>
+                    <button class="logout"></button>
+                    </ul>
             </div>
             <div id="operations-container">
                 <div id="keyboard">
@@ -51,6 +51,7 @@
                             <div><button>category eight</button></div>
                         </div>
                     </div>
+                    
                     <div id="catalog-navigation">
                         <div class="navigation-grid">
                         <button class="btn-up"></button>
@@ -59,7 +60,7 @@
                         </div>
                     </div>
                     <div id="search">
-                        <input class=" search-input" type="text" value=" "/>
+                            <input class=" search-input" type="text" value=" "/>
                     </div>
                 </div>
                 <div id="order-items">
@@ -70,35 +71,36 @@
                         <p>TOTAL</p>
                     </div>
                     <div class="order-contents">
-                        <div class="item value1">2</div>
-                        <div class="item value2">CAPPUCCINO ORIGIN</div>
-                        <div class="item value3">10 Lei</div>
-                        <div class="item value4">20 Lei</div>
-                    </div>
-                </div> 
-                <div id="payment-container">
-                    <div id="receipt">
-                        <div id="order-info">
-                            <div class= "receipt-header">
-                                <p>NR BON</p>
-                                <p>SUMA TOTALA</p>
-                                <p>CASIER</p>
-                            </div>
-                            <div class="receipt-content">
-                                <div class="item nr-bon"></div>
-                                <div class="item total-final"></div>
-                                <div class="item casier"></div>
-                            </div>
-                        </div>  
-                        <div id=advanced-payment>
-                            <div id="payment-methods-grid">
-                                <button class="numerar">NUMERAR</button>
-                                <button class="card">CARD</button>
-                                <button class="plata-avansata">PLATA</button>
-                            </div>
-                        </div>
+                        <div>2</div>
+                        <div>CAPPUCCINO ORIGIN</div>
+                        <div>10.00</div>
+                        <div>20.00</div>
+                        <div>1</div>
+                        <div>FLAT WHITE ORIGIN</div>
+                        <div>10.00</div>
+                        <div>10.00</div>
+                        <div>2</div>
+                        <div>ESPPRESSO DUBLU</div>
+                        <div>7.00</div>
+                        <div>14.00</div>
                     </div>
                 </div>
+                <div class="payment-container">
+                    <div class="receipt">
+                            <div><p>NR BON</p></div>
+                            <div><p>TOTAL</p></div>
+                            <div><p>CASA</p></div>
+                            <div><p>28</p></div>
+                            <div><p>44.00</p></div>
+                            <div><p>ADMIN1</p></div>
+                        </div>
+                    <div class="payment-method">
+                        <button class="pay cash">NUMERAR</button>
+                        <button class="pay card">CARD</button>
+                        <button class="payment-option">OPTIUNI PLATA</button>
+                    </div>
+                    </div>
+                </div>           
             </div>
         </div>
     </body>
