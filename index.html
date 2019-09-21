@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="index.css"/>     
     </head>
     <body>
@@ -24,18 +25,18 @@
                         <input id="keyboard-value" class="numeric-input" type="text" value=" "/>
                     </div>
                     <div class="numeric-grid">
-                        <div><button onclick="keyboardKeyPress(1)">1</button></div>
-                        <div><button onclick="keyboardKeyPress(2)">2</button></div>
-                        <div><button onclick="keyboardKeyPress(3)">3</button></div>
-                        <div><button onclick="keyboardKeyPress(4)">4</button></div>
-                        <div><button onclick="keyboardKeyPress(5)">5</button></div>
-                        <div><button onclick="keyboardKeyPress(6)">6</button></div>
-                        <div><button onclick="keyboardKeyPress(7)">7</button></div>
-                        <div><button onclick="keyboardKeyPress(8)">8</button></div>
-                        <div><button onclick="keyboardKeyPress(9)">9</button></div>
-                        <div><button onclick="keyboardKeyPress(0)">0</button></div>
-                        <div><button onclick="keyboardKeyPress('.')">.</button></div>
-                        <div class="delete-sign"><button onclick="keyboardKeyPress(-1)">&lt;&lt;</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(1)">1</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(2)">2</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(3)">3</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(4)">4</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(5)">5</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(6)">6</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(7)">7</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(8)">8</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(9)">9</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(0)">0</button></div>
+                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress('.')">.</button></div>
+                        <div class="delete-sign"><button class="btn btn-secondary btn-keyboard" onclick="keyboardKeyPress(-1)">&lt;&lt;</button></div>
                     </div>
                 </div>
                 <div id="catalog-container">
@@ -103,14 +104,16 @@
                 </div>           
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript">
             //cand apas pe un buton din tastatura 
             //sa afiseze valoarea lui in elementul input cu id keyboard-value
-            function keyboardKeyPress(value) {
             //preiua valoarea initiala din input
             //concatenez valoarea primita de functie
             //transmit noua valoare in input
-            
+            function keyboardKeyPress(value) {
             var initialValue = document.getElementById("keyboard-value").value.toString()
             if(value == -1) {
                 var newValue = initialValue.slice(0,initialValue.length-1)

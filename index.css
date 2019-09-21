@@ -21,7 +21,7 @@ body {
     background-color: #363537;
     border-color: #363537; 
     color: white;
-    background-image:url(menusign.png); 
+    background-image:url(images/menusign.png); 
 }
 #menu {
     display: grid;
@@ -130,7 +130,11 @@ p {
     background: #eee;
     padding: 1px;   
 }
-.numeric-grid button{
+.btn-keyboard {
+    width: 48px;
+    height: 48px;
+}
+/*.numeric-grid button{
     width: 48px;
     height: 48px;
     border-radius: 8px;
@@ -153,7 +157,7 @@ p {
     color: #fff;
     text-align: center;
     border: 1px solid #fff;
-}
+}*/
 #catalog-container {
     width: 650px;
     height: 250px;
