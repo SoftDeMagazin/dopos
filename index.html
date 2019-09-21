@@ -1,7 +1,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="index.css"/>     
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/v4-shims.css">
+        <link rel="stylesheet" href="index.css"/> 
     </head>
     <body>
         <div id="content">
@@ -42,26 +44,39 @@
                 <div id="catalog-container">
                     <div id="catalog">
                         <div class="category-grid">
-                            <div><button>category one</button></div>
-                            <div><button>category two</button></div>
-                            <div><button>category three</button></div>
-                            <div><button>category four</button></div>
-                            <div><button>category five</button></div>
-                            <div><button>category six</button></div>
-                            <div><button>category seven</button></div>
-                            <div><button>category eight</button></div>
+                            <div><button class="btn btn-warning btn-category">category one</button></div>
+                            <div><button class="btn btn-warning btn-category ">category two</button></div>
+                            <div><button class="btn btn-warning btn-category ">category three</button></div>
+                            <div><button class="btn btn-warning btn-category ">category four</button></div>
+                            <div><button class="btn btn-warning btn-category ">category five</button></div>
+                            <div><button class="btn btn-warning btn-category ">category six</button></div>
+                            <div><button class="btn btn-warning btn-category ">category seven</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
+                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
                         </div>
                     </div>
-                    
                     <div id="catalog-navigation">
                         <div class="navigation-grid">
-                        <button class="btn-up"></button>
-                        <button class="btn-back"></button>
-                        <button class="btn-down"></button>
+                            <button class="btn btn-up" onclick="scrollFunction('up')"></button>
+                            <button class="btn btn-exit"></button>
+                            <button class="btn btn-down" onclick="scrollFunction('down')"></button>
                         </div>
                     </div>
                     <div id="search">
-                            <input class=" search-input" type="text" value=" "/>
+                            <input class="form-control search" type="text" placeholder="Cauta produs"/>
                     </div>
                 </div>
                 <div id="order-items">
@@ -96,9 +111,9 @@
                             <div><p>ADMIN1</p></div>
                         </div>
                     <div class="payment-method">
-                        <button class="pay cash">NUMERAR</button>
-                        <button class="pay card">CARD</button>
-                        <button class="payment-option">OPTIUNI PLATA</button>
+                        <button class="btn btn-primary btn-lg btn-pay">NUMERAR</button>
+                        <button class="btn btn-primary btn-lg btn-pay">CARD</button>
+                        <button class="btn btn-secondary btn-lg btn-pay">OPTIUNI PLATA</button>
                     </div>
                     </div>
                 </div>           
@@ -124,5 +139,19 @@
             document.getElementById("keyboard-value").value = newValue
         }   
         </script>   
+        <script type="text/javascript">
+            //cand apas pe buton jos containerul category sa scroleze in jos 
+            //cand apas pe buton sus containerul category sa scroleze in sus
+            //cand apas pe buton back containerul sa imi incarce si afiseze categoriile
+        function scrollFunction(direction) {
+            //console.log(direction)
+            if (direction=='up') {
+               document.getElementById("catalog").scrollBy(0, -190) 
+            }
+            else {
+                document.getElementById("catalog").scrollBy(0, 190)
+            }
+        }
+        </script>
     </body>
 </html>
