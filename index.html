@@ -44,14 +44,15 @@
                     </div>
                 </div>
                 <div id="order-items">
-                    <div class="order-header-grid">
+                    <div class="order-header-grid" id="order-header">
                         <p>CANTITATE</p>
                         <p>PRODUS</p>
                         <p>PRET</p>
                         <p>TOTAL</p>
                     </div>
-                    <div class="order-contents">
-                        <div>2</div>
+                    <div class="order-contents" id="order-info">
+                    
+                       <!-- <div>2</div>
                         <div>CAPPUCCINO ORIGIN</div>
                         <div>10.00</div>
                         <div>20.00</div>
@@ -63,7 +64,7 @@
                         <div>ESPPRESSO DUBLU</div>
                         <div>7.00</div>
                         <div>14.00</div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="payment-container">
                     <div class="receipt">
@@ -71,7 +72,7 @@
                             <div><p>TOTAL</p></div>
                             <div><p>CASA</p></div>
                             <div><p>28</p></div>
-                            <div><p>44.00</p></div>
+                            <div id="total"><p>44.00</p></div>
                             <div><p>ADMIN1</p></div>
                         </div>
                     <div class="payment-method">
@@ -83,6 +84,7 @@
                 </div>           
             </div>
         </div>
+        <!--added jquery & bootstrap-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -146,6 +148,45 @@
         function showText(text) {
             console.log(text)
         }
+    </script>
+    <script type="text/javascript">
+            var orderInfo = {items:[
+                { quantity: 4, productname: "Espresso", price: 5, total: 20 }, 
+                { quantity: 1, productname: "Flat White Origin", price: 10, total: 10 }, 
+                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
+                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
+                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
+                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
+                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
+                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
+                { quantity: 2, productname: "Cappucino", price: 10, total: 20 }]}
+            function showOrder(){
+            var orderContent=document.getElementById("order-info")
+            var orderLines=""
+            for (var i=0; i<orderInfo.items.length; i++) {
+                orderLines=orderLines +  `<div class="area Quantity">${orderInfo.items[i].quantity}</div>
+                <div class="area ProductName-Area">${orderInfo.items[i].productname}</div>
+                <div class="area Price-Area">${orderInfo.items[i].price.toFixed(2).toString()}</div>
+                <div class="area Total-Area">${orderInfo.items[i].total.toFixed(2).toString()}</div>`
+            }
+            orderContent.innerHTML=orderLines
+            calculateTotal()
+            }
+            showOrder()
+            // calculeaza totalul produselor comandate
+            function calculateTotal(){
+                //defineste o variabila cu elementul cu id-ul total
+                var receiptTotal=document.getElementById("total")
+                //definim o variabila ce reprezinta valoarea totala a produselor comandate
+            var orderTotal=0
+            // parcurgem vectorul orderInfo pentru a ajunge la pretul total produsului (cantitate*pret)
+            // facem suma din totaluri porning de la zero adunand mereu ultima valoarea
+            for (var i=0; i<orderInfo.items.length; i++) {
+                orderTotal=orderTotal + orderInfo.items[i].total
+            }
+            orderTotal=Math.round(orderTotal,2).toFixed(2).toString()
+            receiptTotal.innerHTML=`<p>${orderTotal}<p>`
+            }
     </script>
     </body>
 </html>

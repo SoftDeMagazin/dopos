@@ -248,14 +248,16 @@ p {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-auto-rows: 40px;
+    height: 200px;
     grid-gap: 5px 5px;
-    background-color: #EEE;
+    background-color: #eee;
     padding-left: 10px;
     align-items: center;
     border-radius: 2px;
     font-size: 16px;
     color: black;
     font-weight: bold;
+    overflow-y: scroll;
 }
 .payment-container {
     height: 180px;
@@ -263,7 +265,6 @@ p {
     grid-gap: 2px;
     grid-template-columns: repeat(2, 474px);
     grid-template-rows: 180px;
-    margin-left: 10px;
 }
 .receipt {
     margin-top: 40px;
@@ -306,7 +307,7 @@ p {
 .btn-pay {
     width: 140px;
     height: 100px;
-    margin-left: 10px;
+    margin-left: 6px;
     margin-top: 40px;
    /* border-radius: 8px;
     text-align: center;

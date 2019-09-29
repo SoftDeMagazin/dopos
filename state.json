@@ -59,7 +59,8 @@
             }
         ]
     },
-    "orderItems": [],
-    "orderInfo": {},
+
+    "orderInfo" : {},
+    
     "paymentMethods": []
 }
