@@ -1,25 +1,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/all.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/v4-shims.css">
         <link rel="stylesheet" href="index.css"/> 
     </head>
     <body>
         <div id="content">
             <div id="menu-container">
-                <button class="home"></button>
-                <ul  id="menu">
-                    <button class="marcaj"></button>
-                    <button class="vanzari"></button>
-                    <button class="bonuri"></button>
-                    <button class="rapoarte"></button>
-                    <button class="inchidere-zi"></button>
-                    <button class="configurari-produse"></button>
-                    <button class="setari"></button>
-                    <button class="suport"></button>
-                    <button class="logout"></button>
-                    </ul>
+                <button class="btn btn-secondary btn-lg home" id="home-menu"></button>
             </div>
             <div id="operations-container">
                 <div id="keyboard">
@@ -27,51 +14,28 @@
                         <input id="keyboard-value" class="numeric-input" type="text" value=" "/>
                     </div>
                     <div class="numeric-grid">
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(1)">1</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(2)">2</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(3)">3</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(4)">4</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(5)">5</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(6)">6</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(7)">7</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(8)">8</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(9)">9</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress(0)">0</button></div>
-                        <div><button class="btn btn-primary btn-keyboard" onclick="keyboardKeyPress('.')">.</button></div>
-                        <div class="delete-sign"><button class="btn btn-secondary btn-keyboard" onclick="keyboardKeyPress(-1)">&lt;&lt;</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(1)">1</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(2)">2</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(3)">3</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(4)">4</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(5)">5</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(6)">6</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(7)">7</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(8)">8</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(9)">9</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(0)">0</button></div>
+                        <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress('.')">.</button></div>
+                        <div class="delete-sign"><button class="btn btn-danger btn-keyboard" onclick="keyboardKeyPress(-1)">&lt;&lt;</button></div>
                     </div>
                 </div>
                 <div id="catalog-container">
                     <div id="catalog">
-                        <div class="category-grid">
-                            <div><button class="btn btn-warning btn-category">category one</button></div>
-                            <div><button class="btn btn-warning btn-category ">category two</button></div>
-                            <div><button class="btn btn-warning btn-category ">category three</button></div>
-                            <div><button class="btn btn-warning btn-category ">category four</button></div>
-                            <div><button class="btn btn-warning btn-category ">category five</button></div>
-                            <div><button class="btn btn-warning btn-category ">category six</button></div>
-                            <div><button class="btn btn-warning btn-category ">category seven</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                            <div><button class="btn btn-warning btn-category ">category eight</button></div>
-                        </div>
+                        <div class="category-grid" id="catalog-content"></div>
                     </div>
                     <div id="catalog-navigation">
                         <div class="navigation-grid">
                             <button class="btn btn-up" onclick="scrollFunction('up')"></button>
-                            <button class="btn btn-exit"></button>
+                            <button class="btn btn-exit" onclick="showCategories()"></button>
                             <button class="btn btn-down" onclick="scrollFunction('down')"></button>
                         </div>
                     </div>
@@ -111,8 +75,8 @@
                             <div><p>ADMIN1</p></div>
                         </div>
                     <div class="payment-method">
-                        <button class="btn btn-primary btn-lg btn-pay">NUMERAR</button>
-                        <button class="btn btn-primary btn-lg btn-pay">CARD</button>
+                        <button class="btn btn-info btn-lg btn-pay" onclick="showText('numerar')">NUMERAR</button>
+                        <button class="btn btn-info btn-lg btn-pay" onclick="showText('card')">CARD</button>
                         <button class="btn btn-secondary btn-lg btn-pay">OPTIUNI PLATA</button>
                     </div>
                     </div>
@@ -153,5 +117,35 @@
             }
         }
         </script>
+        <script type="text/javascript">
+        // vreau sa afiseze categoriile definitie in json din sectiunea categories
+            var catalog={categories:[
+                {id:1, name:"Kimbo", products:[{name:"Espresso", price:6}, {name:"Cappuccino", price:9}]}, 
+                {id:2, name:"Kimbo Origin", products:[{name:"Espresso Origin", price:7}, {name:"Flat White Origin", price: 12}]}, 
+                {id:3, name:"Non-coffee", products:[{name:"Limonada", price: 10}]}
+            ]
+            }
+            var catalogContent=document.getElementById("catalog-content")
+            function showCategories () {
+                var categoriesButtons =""
+                for (var i=0; i<catalog.categories.length; i++) {
+                categoriesButtons=categoriesButtons + `<div><button onclick="showProducts(${i})" class="btn btn-warning btn-category">${catalog.categories[i].name}</button></div>`
+            }
+            catalogContent.innerHTML=categoriesButtons
+            }
+            function showProducts(index) {
+                var productButtons=""
+                for (var i=0; i<catalog.categories[index].products.length; i++) {
+                    productButtons=productButtons + `<div><button class="btn btn-warning btn-category">${catalog.categories[index].products[i].name}</button></div>`
+                }
+                catalogContent.innerHTML=productButtons
+            }
+            showCategories()
+        </script>
+    <script type="text/javascript">
+        function showText(text) {
+            console.log(text)
+        }
+    </script>
     </body>
 </html>

@@ -6,22 +6,20 @@ body {
     width: 1024px;
     height: 768px;
     margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #menu-container {
     width: 60px;
-    height: 760px;
-    background-color: #363537;
+    height: 40px;
     float: left;
 }
 .home {
-    width: 60px; 
-    height: 60px; 
-    background-repeat: no-repeat; 
-    align-content: center;
-    background-color: #363537;
-    border-color: #363537; 
-    color: white;
-    background-image:url(images/menusign.png); 
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background-image: url(images/menusign.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #menu {
     display: grid;
@@ -161,29 +159,28 @@ p {
     height:94px;
 }
 #catalog-navigation {
-    width:40px;
+    width:45px;
     height:210px;
     float: left;
 }
 .navigation-grid {
     display: grid;
-    grid-template-columns: repeat(1, 30px);
+    grid-template-columns: repeat(1, 35px);
     grid-auto-rows: minmax(40px, auto);
     grid-gap: 2px;
     align-items: center;
     justify-content: center;
     align-content: center;
-    background-color: #E7E7E7;
+    background-color: #F7F7F7;
 }
 .btn-up {
-   width: 30px;
-   height: 30px;
+   width: 35px;
+   height: 35px;
    margin-top: 10px;
-   margin-bottom: 45px;
+   margin-bottom: 44px;
    background-image: url(images/caret-square-up-solid.svg);
    background-position: center;
    background-repeat: no-repeat;
-   justify-content: space-around;
   }
 .btn-exit {
     width: 30px;
@@ -191,17 +188,15 @@ p {
     background-image: url(images/undo-solid.svg);
     background-position: center;
     background-repeat: no-repeat;
-    justify-content: space-around;
 }
 .btn-down {
-    width: 30px;
-    height: 30px;
-    margin-top: 45px;
+    width: 35px;
+    height: 35px;
+    margin-top: 44px;
     margin-bottom: 10px;
     background-image: url(images/caret-square-down-solid.svg);
     background-position: center;
     background-repeat: no-repeat;
-    justify-content: space-around;
 }
 .search {
     width: 568px;
@@ -239,6 +234,7 @@ p {
     grid-gap: 1px 1px;
     background-color: #363537;
     padding-left: 10px;
+    padding-top: 5px;
     align-items: center;
     justify-content: left;
     border: 1px #EEE solid;
@@ -254,7 +250,7 @@ p {
     grid-auto-rows: 40px;
     grid-gap: 5px 5px;
     background-color: #EEE;
-    padding-left: 20px;
+    padding-left: 10px;
     align-items: center;
     border-radius: 2px;
     font-size: 16px;

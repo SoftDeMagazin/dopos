@@ -1,14 +1,65 @@
 {
     "keyboard": {
         "currentValue": null,
-        "keys"
+        "keys": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            "<<"
+        ]
     },
     "catalog": {
-
+        "categories": [
+            {
+                "id": 1,
+                "name": "Kimbo",
+                "products": [
+                    {
+                        "name": "Espresso",
+                        "price": 5
+                    },
+                    {
+                        "name": "Double Espresso",
+                        "price": 5
+                    },
+                    {
+                        "name": "Cappuccino",
+                        "price": 9
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Kimbo Origin",
+                "products": [
+                    {
+                        "name": "Espresso Origin",
+                        "price": 6
+                    },
+                    {
+                        "name": "Double Espresso Origin",
+                        "price": 6
+                    },
+                    {
+                        "name": "Cappuccino Origin",
+                        "price": 10
+                    },
+                    {
+                        "name": "Flat White Origin",
+                        "price": 10
+                    }
+                ]
+            }
+        ]
     },
     "orderItems": [],
-    "orderInfo": {
-
-    },
+    "orderInfo": {},
     "paymentMethods": []
 }
