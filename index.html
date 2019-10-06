@@ -6,8 +6,19 @@
     <body>
         <div id="content">
             <div id="menu-container">
-                <button class="btn btn-secondary btn-lg home" id="home-menu"></button>
-            </div>
+                    <div id="mySidenav" class="sidenav">
+                            <a href="#" style="font-size:30px; padding-left:32px;" class="closebtn " onclick="closeNav()">&#8676;</a>
+                            <a href="#">Marcaj</a>
+                            <a href="#">Evidenta vanzari</a>
+                            <a href="#">Evidenta bonuri</a>
+                            <a href="#">Rapoarte</a>
+                            <a href="#">Inchidere zi</a>
+                            <a href="#">Configurari Produse</a>
+                            <a href="#">Configurari</a>
+                            <a href="#">Deconectare</a>
+                        </div>
+                        <span style="font-size:30px;padding:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                    </div>
             <div id="operations-container">
                 <div id="keyboard">
                     <div id="keyboard-result">
@@ -34,9 +45,9 @@
                     </div>
                     <div id="catalog-navigation">
                         <div class="navigation-grid">
-                            <button class="btn btn-up" onclick="scrollFunction('up')"></button>
-                            <button class="btn btn-exit" onclick="showCategories()"></button>
-                            <button class="btn btn-down" onclick="scrollFunction('down')"></button>
+                            <button class="btn btn-up" style="font-size:25px; text-align: middle" onclick="scrollFunction('up')">&#8613;</button>
+                            <button class="btn btn-exit" style="font-size:25px; text-align: middle" onclick="showCategories()">&#8676;</button>
+                            <button class="btn btn-down" style="font-size:25px; text-align: middle" onclick="scrollFunction('down')">&#8615;</button>
                         </div>
                     </div>
                     <div id="search">
@@ -50,22 +61,7 @@
                         <p>PRET</p>
                         <p>TOTAL</p>
                     </div>
-                    <div class="order-contents" id="order-info">
-                    
-                       <!-- <div>2</div>
-                        <div>CAPPUCCINO ORIGIN</div>
-                        <div>10.00</div>
-                        <div>20.00</div>
-                        <div>1</div>
-                        <div>FLAT WHITE ORIGIN</div>
-                        <div>10.00</div>    
-                        <div>10.00</div>
-                        <div>2</div>
-                        <div>ESPPRESSO DUBLU</div>
-                        <div>7.00</div>
-                        <div>14.00</div>
-                    </div>-->
-                </div>
+                    <div class="order-contents" id="order-info"></div>
                 <div class="payment-container">
                     <div class="receipt">
                             <div><p>NR BON</p></div>
@@ -88,6 +84,14 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+                function openNav() {
+                  document.getElementById("mySidenav").style.width = "205px";
+                }
+                function closeNav() {
+                  document.getElementById("mySidenav").style.width = "0";
+                }
+        </script>
         <script type="text/javascript">
             //cand apas pe un buton din tastatura 
             //sa afiseze valoarea lui in elementul input cu id keyboard-value
@@ -187,6 +191,9 @@
             orderTotal=Math.round(orderTotal,2).toFixed(2).toString()
             receiptTotal.innerHTML=`<p>${orderTotal}<p>`
             }
+    </script>
+    <script>
+        
     </script>
     </body>
 </html>
