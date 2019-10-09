@@ -22,7 +22,7 @@
             <div id="operations-container">
                 <div id="keyboard">
                     <div id="keyboard-result">
-                        <input id="keyboard-value" class="numeric-input" type="text" value=" "/>
+                        <input id="keyboard-value" class="numeric-input" type="text" value=""/>
                     </div>
                     <div class="numeric-grid">
                         <div><button class="btn btn-info btn-keyboard" onclick="keyboardKeyPress(1)">1</button></div>
@@ -88,31 +88,36 @@
                 function openNav() {
                   document.getElementById("mySidenav").style.width = "205px";
                 }
+               
                 function closeNav() {
                   document.getElementById("mySidenav").style.width = "0";
                 }
         </script>
+
         <script type="text/javascript">
             //cand apas pe un buton din tastatura 
             //sa afiseze valoarea lui in elementul input cu id keyboard-value
             //preiua valoarea initiala din input
             //concatenez valoarea primita de functie
             //transmit noua valoare in input
+
             function keyboardKeyPress(value) {
-            var initialValue = document.getElementById("keyboard-value").value.toString()
-            if(value == -1) {
-                var newValue = initialValue.slice(0,initialValue.length-1)
-            }
+                var initialValue = document.getElementById("keyboard-value").value.toString()
+                if(value == -1) {
+                    var newValue = initialValue.slice(0,initialValue.length-1)
+                }
                 else {
                    var newValue = initialValue + value.toString()
-            }
-            document.getElementById("keyboard-value").value = newValue
-        }   
+                }
+                document.getElementById("keyboard-value").value = newValue
+            }   
         </script>   
-        <script type="text/javascript">
+       
+       <script type="text/javascript">
             //cand apas pe buton jos containerul category sa scroleze in jos 
             //cand apas pe buton sus containerul category sa scroleze in sus
             //cand apas pe buton back containerul sa imi incarce si afiseze categoriile
+       
         function scrollFunction(direction) {
             //console.log(direction)
             if (direction=='up') {
@@ -130,70 +135,82 @@
                 {id:2, name:"Kimbo Origin", products:[{name:"Espresso Origin", price:7}, {name:"Flat White Origin", price: 12}]}, 
                 {id:3, name:"Non-coffee", products:[{name:"Limonada", price: 10}]}
             ]
-            }
-            var catalogContent=document.getElementById("catalog-content")
+            }   
+
+            function addProductToOrderItems(product, quantity) {
+                // in lista de orderInfo.items vreau sa adaug o noua linie
+                // care arata cantitatea numele produs si pret 
+                // pe care le iau din parametrii functiei mele
+                // adica product.name, product.proce, quantity
+                console.log(quantity)
+                if (quantity=="") {
+                    quantity=1
+                }
+                console.log(quantity)
+                orderInfo.items.push({quantity:quantity, productname:product.name, price:product.price}) 
+                // daca cantitatea nu e definita atunci
+                // cantitatea sa fie automat cu valoarea "1" 
+                showOrder()
+            }  
+
             function showCategories () {
+                var catalogContent=document.getElementById("catalog-content")
                 var categoriesButtons =""
                 for (var i=0; i<catalog.categories.length; i++) {
-                categoriesButtons=categoriesButtons + `<div><button onclick="showProducts(${i})" class="btn btn-warning btn-category">${catalog.categories[i].name}</button></div>`
+                    categoriesButtons=categoriesButtons + `<div><button onclick="showProducts(${i})" class="btn btn-warning btn-category">${catalog.categories[i].name}</button></div>`
+                }
+                catalogContent.innerHTML=categoriesButtons
             }
-            catalogContent.innerHTML=categoriesButtons
-            }
+
             function showProducts(index) {
+                var catalogContent=document.getElementById("catalog-content")
                 var productButtons=""
                 for (var i=0; i<catalog.categories[index].products.length; i++) {
-                    productButtons=productButtons + `<div><button class="btn btn-warning btn-category">${catalog.categories[index].products[i].name}</button></div>`
+                    productButtons=productButtons + `<div><button onclick="addProductToOrderItems(catalog.categories[${index}].products[${i}], document.getElementById('keyboard-value').value)" class="btn btn-warning btn-category">${catalog.categories[index].products[i].name}</button></div>`
                 }
                 catalogContent.innerHTML=productButtons
             }
+           
             showCategories()
-        </script>
-    <script type="text/javascript">
-        function showText(text) {
-            console.log(text)
-        }
-    </script>
-    <script type="text/javascript">
+            
+            function showText(text) {
+                console.log(text)
+            }
+         </script>
+
+         <script type="text/javascript">
             var orderInfo = {items:[
-                { quantity: 4, productname: "Espresso", price: 5, total: 20 }, 
-                { quantity: 1, productname: "Flat White Origin", price: 10, total: 10 }, 
-                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
-                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
-                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
-                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
-                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
-                { quantity: 1, productname: "Limonada", price: 14, total: 14 },
-                { quantity: 2, productname: "Cappucino", price: 10, total: 20 }]}
+                { quantity: 4, productname: "Espresso", price: 5 }
+                ]}
             function showOrder(){
-            var orderContent=document.getElementById("order-info")
-            var orderLines=""
-            for (var i=0; i<orderInfo.items.length; i++) {
-                orderLines=orderLines +  `<div class="area Quantity">${orderInfo.items[i].quantity}</div>
-                <div class="area ProductName-Area">${orderInfo.items[i].productname}</div>
-                <div class="area Price-Area">${orderInfo.items[i].price.toFixed(2).toString()}</div>
-                <div class="area Total-Area">${orderInfo.items[i].total.toFixed(2).toString()}</div>`
+                var orderContent=document.getElementById("order-info")
+                var orderLines=""
+                for (var i=0; i<orderInfo.items.length; i++) {
+                    orderLines=orderLines +  `<div class="area Quantity">${orderInfo.items[i].quantity}</div>
+                    <div class="area ProductName-Area">${orderInfo.items[i].productname}</div>
+                    <div class="area Price-Area">${orderInfo.items[i].price.toFixed(2).toString()}</div>
+                    <div class="area Total-Area">${orderInfo.items[i].quantity*orderInfo.items[i].price.toFixed(2).toString()}</div>`
+                }
+                orderContent.innerHTML=orderLines
+                calculateTotal()
             }
-            orderContent.innerHTML=orderLines
-            calculateTotal()
-            }
+
             showOrder()
-            // calculeaza totalul produselor comandate
+           
             function calculateTotal(){
+                // calculeaza totalul produselor comandate
                 //defineste o variabila cu elementul cu id-ul total
-                var receiptTotal=document.getElementById("total")
                 //definim o variabila ce reprezinta valoarea totala a produselor comandate
-            var orderTotal=0
-            // parcurgem vectorul orderInfo pentru a ajunge la pretul total produsului (cantitate*pret)
-            // facem suma din totaluri porning de la zero adunand mereu ultima valoarea
-            for (var i=0; i<orderInfo.items.length; i++) {
-                orderTotal=orderTotal + orderInfo.items[i].total
+                // parcurgem vectorul orderInfo pentru a ajunge la pretul total produsului (cantitate*pret)
+                // facem suma din totaluri porning de la zero adunand mereu ultima valoarea
+                var receiptTotal=document.getElementById("total")
+                var orderTotal=0
+                for (var i=0; i<orderInfo.items.length; i++) {
+                    orderTotal=orderTotal + (orderInfo.items[i].quantity*orderInfo.items[i].price.toFixed(2).toString())
+                }
+                orderTotal=Math.round(orderTotal,2).toFixed(2).toString()
+                receiptTotal.innerHTML=`<p>${orderTotal}<p>`
             }
-            orderTotal=Math.round(orderTotal,2).toFixed(2).toString()
-            receiptTotal.innerHTML=`<p>${orderTotal}<p>`
-            }
-    </script>
-    <script>
-        
-    </script>
-    </body>
+            </script>
+            </body>
 </html>
