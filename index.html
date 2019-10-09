@@ -7,7 +7,7 @@
         <div id="content">
             <div id="menu-container">
                     <div id="mySidenav" class="sidenav">
-                            <a href="#" style="font-size:30px; padding-left:32px;" class="closebtn " onclick="closeNav()">&#8676;</a>
+                            <a href="#" style="font-size:30px; margin-top: 10px; padding-left:32px;" class="closebtn " onclick="closeNav()">&#8676;</a>
                             <a href="#">Marcaj</a>
                             <a href="#">Evidenta vanzari</a>
                             <a href="#">Evidenta bonuri</a>
@@ -17,7 +17,7 @@
                             <a href="#">Configurari</a>
                             <a href="#">Deconectare</a>
                         </div>
-                        <span style="font-size:30px;padding:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                        <span style="font-size:30px;padding:16px;cursor:pointer" onclick="openNav()">&#9776;</span>
                     </div>
             <div id="operations-container">
                 <div id="keyboard">
@@ -40,6 +40,9 @@
                     </div>
                 </div>
                 <div id="catalog-container">
+                        <div id="search">
+                                <input class="form-control search" type="text" placeholder="Cauta produs"/>
+                        </div>
                     <div id="catalog">
                         <div class="category-grid" id="catalog-content"></div>
                     </div>
@@ -50,30 +53,29 @@
                             <button class="btn btn-down" style="font-size:25px; text-align: middle" onclick="scrollFunction('down')">&#8615;</button>
                         </div>
                     </div>
-                    <div id="search">
-                            <input class="form-control search" type="text" placeholder="Cauta produs"/>
-                    </div>
+                    
                 </div>
                 <div id="order-items">
                     <div class="order-header-grid" id="order-header">
                         <p>CANTITATE</p>
-                        <p>PRODUS</p>
+                        <p style="padding-left: 20px">PRODUS</p>
                         <p>PRET</p>
                         <p>TOTAL</p>
                     </div>
                     <div class="order-contents" id="order-info"></div>
+                </div>
                 <div class="payment-container">
                     <div class="receipt">
                             <div><p>NR BON</p></div>
                             <div><p>TOTAL</p></div>
                             <div><p>CASA</p></div>
                             <div><p>28</p></div>
-                            <div id="total"><p>44.00</p></div>
+                            <div id="total"></div>
                             <div><p>ADMIN1</p></div>
                         </div>
                     <div class="payment-method">
-                        <button class="btn btn-info btn-lg btn-pay" onclick="showText('numerar')">NUMERAR</button>
-                        <button class="btn btn-info btn-lg btn-pay" onclick="showText('card')">CARD</button>
+                        <button class="btn btn-warning btn-lg btn-pay" onclick="showText('numerar')">NUMERAR</button>
+                        <button class="btn btn-warning btn-lg btn-pay" onclick="showText('card')">CARD</button>
                         <button class="btn btn-secondary btn-lg btn-pay">OPTIUNI PLATA</button>
                     </div>
                     </div>
@@ -133,7 +135,8 @@
             var catalog={categories:[
                 {id:1, name:"Kimbo", products:[{name:"Espresso", price:6}, {name:"Cappuccino", price:9}]}, 
                 {id:2, name:"Kimbo Origin", products:[{name:"Espresso Origin", price:7}, {name:"Flat White Origin", price: 12}]}, 
-                {id:3, name:"Non-coffee", products:[{name:"Limonada", price: 10}]}
+                {id:3, name:"Specialities", products:[{name:"Matcha", price:12},{name:"Frappe", price:12}, {name:"Oreo wonder", price: 12}]}, 
+                {id:4, name:"Non-coffee", products:[{name:"Limonada", price: 10}]}
             ]
             }   
 
@@ -157,7 +160,7 @@
                 var catalogContent=document.getElementById("catalog-content")
                 var categoriesButtons =""
                 for (var i=0; i<catalog.categories.length; i++) {
-                    categoriesButtons=categoriesButtons + `<div><button onclick="showProducts(${i})" class="btn btn-warning btn-category">${catalog.categories[i].name}</button></div>`
+                    categoriesButtons=categoriesButtons + `<div><button onclick="showProducts(${i})" class="btn btn-info btn-category">${catalog.categories[i].name}</button></div>`
                 }
                 catalogContent.innerHTML=categoriesButtons
             }
@@ -166,7 +169,7 @@
                 var catalogContent=document.getElementById("catalog-content")
                 var productButtons=""
                 for (var i=0; i<catalog.categories[index].products.length; i++) {
-                    productButtons=productButtons + `<div><button onclick="addProductToOrderItems(catalog.categories[${index}].products[${i}], document.getElementById('keyboard-value').value)" class="btn btn-warning btn-category">${catalog.categories[index].products[i].name}</button></div>`
+                    productButtons=productButtons + `<div><button onclick="addProductToOrderItems(catalog.categories[${index}].products[${i}], document.getElementById('keyboard-value').value)" class="btn btn-info btn-category">${catalog.categories[index].products[i].name}</button></div>`
                 }
                 catalogContent.innerHTML=productButtons
             }
@@ -187,7 +190,7 @@
                 var orderLines=""
                 for (var i=0; i<orderInfo.items.length; i++) {
                     orderLines=orderLines +  `<div class="area Quantity">${orderInfo.items[i].quantity}</div>
-                    <div class="area ProductName-Area">${orderInfo.items[i].productname}</div>
+                    <div style="padding-left:16px" class="area ProductName-Area">${orderInfo.items[i].productname}</div>
                     <div class="area Price-Area">${orderInfo.items[i].price.toFixed(2).toString()}</div>
                     <div class="area Total-Area">${orderInfo.items[i].quantity*orderInfo.items[i].price.toFixed(2).toString()}</div>`
                 }
@@ -199,8 +202,8 @@
            
             function calculateTotal(){
                 // calculeaza totalul produselor comandate
-                //defineste o variabila cu elementul cu id-ul total
-                //definim o variabila ce reprezinta valoarea totala a produselor comandate
+                // defineste o variabila cu elementul cu id-ul total
+                // definim o variabila ce reprezinta valoarea totala a produselor comandate
                 // parcurgem vectorul orderInfo pentru a ajunge la pretul total produsului (cantitate*pret)
                 // facem suma din totaluri porning de la zero adunand mereu ultima valoarea
                 var receiptTotal=document.getElementById("total")
