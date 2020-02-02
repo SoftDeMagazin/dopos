@@ -8,3 +8,5 @@ showProducts - afiseaza produsele din categorie si adauga functionalitate pe but
 showText - afiseaza text in consola
 showOrder - afiseasa lista de produse: cantitate, nume, pret si total 
 calculateTotal - calculeaza totalul produselor comandate
+scrollOrderToBottom - sa afisez automat ultimul produs adaugat in OrderItem
+removeOrderItem- elimina item-uri din lista order-info 

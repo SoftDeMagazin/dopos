@@ -58,7 +58,7 @@
                 <div id="order-items">
                     <div class="order-header-grid" id="order-header">
                         <p>CANTITATE</p>
-                        <p style="padding-left: 20px">PRODUS</p>
+                        <p>PRODUS</p>
                         <p>PRET</p>
                         <p>TOTAL</p>
                     </div>
@@ -136,7 +136,9 @@
                 {id:1, name:"Kimbo", products:[{name:"Espresso", price:6}, {name:"Cappuccino", price:9}]}, 
                 {id:2, name:"Kimbo Origin", products:[{name:"Espresso Origin", price:7}, {name:"Flat White Origin", price: 12}]}, 
                 {id:3, name:"Specialities", products:[{name:"Matcha", price:12},{name:"Frappe", price:12}, {name:"Oreo wonder", price: 12}]}, 
-                {id:4, name:"Non-coffee", products:[{name:"Limonada", price: 10}]}
+                {id:4, name:"Non-coffee", products:[{name:"Limonada", price: 10}, {name:"Apa", price:3}]},
+                {id:5, name:"Food", products:[{name:"Croissant", price:3.5}, {name:"Briosa", price:6}]},
+                {id:6, name:"Arome", products:[{name:"Cocos", price: 2.5}, {name:"Vanilla", price: 2.5}, {name:"Ciocolata", price: 2.5}]}
             ]
             }   
 
@@ -145,16 +147,22 @@
                 // care arata cantitatea numele produs si pret 
                 // pe care le iau din parametrii functiei mele
                 // adica product.name, product.proce, quantity
-                console.log(quantity)
+                //console.log(quantity)
                 if (quantity=="") {
                     quantity=1
                 }
-                console.log(quantity)
+                //console.log(quantity)
                 orderInfo.items.push({quantity:quantity, productname:product.name, price:product.price}) 
                 // daca cantitatea nu e definita atunci
                 // cantitatea sa fie automat cu valoarea "1" 
                 showOrder()
+                scrollToBottom()     
             }  
+
+            function scrollToBottom() {    
+                var y=document.getElementById("order-info").scrollHeight
+                document.getElementById("order-info").scrollTo(0,y)
+                }   
 
             function showCategories () {
                 var catalogContent=document.getElementById("catalog-content")
@@ -182,24 +190,36 @@
          </script>
 
          <script type="text/javascript">
-            var orderInfo = {items:[
-                { quantity: 4, productname: "Espresso", price: 5 }
-                ]}
+            var orderInfo = {items:[]}
             function showOrder(){
                 var orderContent=document.getElementById("order-info")
                 var orderLines=""
                 for (var i=0; i<orderInfo.items.length; i++) {
                     orderLines=orderLines +  `<div class="area Quantity">${orderInfo.items[i].quantity}</div>
-                    <div style="padding-left:16px" class="area ProductName-Area">${orderInfo.items[i].productname}</div>
+                    <div class="area ProductName-Area">${orderInfo.items[i].productname}</div>
                     <div class="area Price-Area">${orderInfo.items[i].price.toFixed(2).toString()}</div>
-                    <div class="area Total-Area">${orderInfo.items[i].quantity*orderInfo.items[i].price.toFixed(2).toString()}</div>`
+                    <div class="area Total-Area">${orderInfo.items[i].quantity*orderInfo.items[i].price.toFixed(2).toString()}</div>
+                    <button class="btn btn-danger btn-delete" style="align-items:left" onclick="removeOrderItem(${i})">X</button>`
                 }
                 orderContent.innerHTML=orderLines
                 calculateTotal()
             }
 
             showOrder()
-           
+
+             function removeOrderItem(position) {
+                 /*var items=[]
+                 for (var i=0; i<orderInfo.items.length; i++) {
+                     if (i!=position) {
+                        items.push(orderInfo.items[i])
+                     }
+                 }*/
+
+                 orderInfo.items = orderInfo.items.filter((el, index) => index != position);
+                
+                 showOrder()
+             }   
+
             function calculateTotal(){
                 // calculeaza totalul produselor comandate
                 // defineste o variabila cu elementul cu id-ul total
@@ -214,6 +234,8 @@
                 orderTotal=Math.round(orderTotal,2).toFixed(2).toString()
                 receiptTotal.innerHTML=`<p>${orderTotal}<p>`
             }
+            
+
             </script>
             </body>
 </html>
