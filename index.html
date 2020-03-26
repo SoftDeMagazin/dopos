@@ -112,7 +112,7 @@
                    var newValue = initialValue + value.toString()
                 }
                 document.getElementById("keyboard-value").value = newValue
-            }   
+            }           
         </script>   
        
        <script type="text/javascript">
@@ -156,7 +156,8 @@
                 // daca cantitatea nu e definita atunci
                 // cantitatea sa fie automat cu valoarea "1" 
                 showOrder()
-                scrollToBottom()     
+                scrollToBottom()
+                document.getElementById("keyboard-value").value = ""     
             }  
 
             function scrollToBottom() {    
